@@ -1,0 +1,240 @@
+/* Dashboard.css */
+
+.dashboard-container {
+    min-height: 100vh;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Balance Card */
+.balance-card {
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.balance-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    transform: rotate(30deg);
+}
+
+.balance-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-xs);
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.card-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.card-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Quick Actions Section */
+.quick-actions {
+    padding: var(--spacing-md);
+    border-radius: 16px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.action-item:hover {
+    transform: translateY(-2px);
+}
+
+.action-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--bg-input);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.action-item:hover .action-icon {
+    background: var(--primary);
+    color: white;
+}
+
+.action-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Recent Transactions */
+.transactions-section {
+    padding: var(--spacing-md);
+    border-radius: 16px;
+    grid-column: 1 / -1;
+    /* Bottom full width usage example */
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.t-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.t-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-input);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-secondary);
+}
+
+.t-details h4 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.t-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.t-amount {
+    font-weight: 600;
+}
+
+.t-amount.positive {
+    color: #10b981;
+    /* Green */
+}
+
+.t-amount.negative {
+    color: var(--text-primary);
+}
+
+/* Dashboard Charts Section */
+.dashboard-charts-section {
+    margin-top: 0.5rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
